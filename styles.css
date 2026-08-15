@@ -58,12 +58,21 @@ body {
 }
 .btn-whatsapp-header svg { width: 18px; height: 18px; }
 .btn-whatsapp-header:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-
 .hero {
     position: relative;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, var(--color-accent) 100%);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    text-align: center; padding: 120px 24px 160px; overflow: hidden;
+    background-color: var(--color-primary);
+    background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, var(--color-accent) 100%);
+    background-size: 24px 24px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+    min-height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center; 
+    padding: 120px 24px 160px; 
+    overflow: hidden;
 }
 .hero::before {
     content: ''; position: absolute; top: -50%; right: -20%;
