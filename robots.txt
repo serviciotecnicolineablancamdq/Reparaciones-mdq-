@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://serviciotecnicolineablancamdq.github.io/Reparaciones-mdq-/sitemap.xml
+Sitemap: https://serviciotecnicolineablancamdq.github.io/Reparaciones_mdq-/sitemap.xml
