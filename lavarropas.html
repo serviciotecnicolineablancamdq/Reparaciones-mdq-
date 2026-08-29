@@ -28,6 +28,9 @@
       "@type": "LocalBusiness",
       "name": "Reparaciones Gonzamdq",
       "telephone": "+5492236743622",
+      "sameAs": [
+        "https://www.instagram.com/reparacionesgonzamdq/"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Mar del Plata",
@@ -99,16 +102,32 @@
       background: #e7f5ff;
       border-radius: 10px;
     }
+    .cta-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
     .btn-whatsapp {
       display: inline-block;
       background-color: #25d366;
       color: white;
-      padding: 12px 24px;
+      padding: 12px 20px;
       border-radius: 25px;
       text-decoration: none;
-      font-size: 1.1em;
+      font-size: 1em;
       font-weight: bold;
-      margin-top: 15px;
+    }
+    .btn-instagram {
+      display: inline-block;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -157,7 +176,11 @@
     <div class="cta-container">
       <h2>¿Tu lavarropas no funciona bien?</h2>
       <p>Consulta por disponibilidad de visita y solicita tu diagnóstico hoy mismo.</p>
-      <a href="https://wa.me/5492236743622?text=Hola!%20Vengo%20de%20la%20página%20web%20y%20quiero%20consultar%20por%20el%20servicio%20de%20Lavarropas" class="btn-whatsapp" target="_blank">Consultar por WhatsApp 📱</a>
+      
+      <div class="cta-buttons">
+        <a href="https://wa.me/5492236743622?text=Hola!%20Vengo%20de%20la%20página%20web%20y%20quiero%20consultar%20por%20el%20servicio%20de%20Lavarropas" class="btn-whatsapp" target="_blank">Consultar por WhatsApp 📱</a>
+        <a href="https://www.instagram.com/reparacionesgonzamdq/" class="btn-instagram" target="_blank">Ver trabajos en Instagram 📷</a>
+      </div>
     </div>
 
     <div style="margin-top: 25px; text-align: center;">
