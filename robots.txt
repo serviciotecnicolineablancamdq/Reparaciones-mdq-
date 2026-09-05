@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap oficial
-Sitemap: https://serviciotecnicolineablancamdq.github.io/Reparaciones-mdq-/sitemap.xml
+Sitemap: https://reparacionesgonzamdq.com/sitemap.xml
