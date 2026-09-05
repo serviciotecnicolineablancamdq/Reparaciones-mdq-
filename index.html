@@ -218,6 +218,11 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             border: 1px solid #eee;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
         }
 
         .service-card:hover {
@@ -244,6 +249,7 @@
         .service-card p {
             color: #666;
             font-size: 0.95rem;
+            flex-grow: 1;
         }
 
         /* Contacto */
@@ -398,16 +404,6 @@
 
       <div class="services-grid">
 
-        <!-- Tarjeta Soluciones Industriales -->
-        <a href="soluciones-industriales.html" style="text-decoration: none; color: inherit;">
-          <div class="service-card card-industrial">
-            <div class="service-icon">🏭</div>
-            <h3 style="color: #0f2b48;">Soluciones Industriales</h3>
-            <p>Electromecánica, refrigeración comercial, tableros de automatización y abonos de mantenimiento preventivo.</p>
-            <span style="color: #0f2b48; font-weight: bold; display: block; margin-top: 10px; font-size: 0.9em;">Ver área industrial →</span>
-          </div>
-        </a>
-
         <a href="lavarropas.html" style="text-decoration: none; color: inherit;">
           <div class="service-card">
             <div class="service-icon">🧺</div>
@@ -514,6 +510,16 @@
                 <p>Carga de gas refrigerante, prueba de fugas y diagnóstico de compresión. Solución a fallas de enfriamiento, pérdidas en el circuito, cambio de sellos y mantenimiento preventivo.</p>
                 <span style="color: #007bff; font-weight: bold; display: block; margin-top: 10px; font-size: 0.9rem;">Ver detalles del servicio →</span>
             </div>
+        </a>
+
+        <!-- Tarjeta Soluciones Industriales (Ubicada al final) -->
+        <a href="soluciones-industriales.html" style="text-decoration: none; color: inherit;">
+          <div class="service-card card-industrial">
+            <div class="service-icon">🏭</div>
+            <h3 style="color: #0f2b48;">Soluciones Industriales</h3>
+            <p>Electromecánica, refrigeración comercial, tableros de automatización y abonos de mantenimiento preventivo.</p>
+            <span style="color: #0f2b48; font-weight: bold; display: block; margin-top: 10px; font-size: 0.9em;">Ver área industrial →</span>
+          </div>
         </a>
 
       </div>
