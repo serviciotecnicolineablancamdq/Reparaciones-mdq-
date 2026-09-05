@@ -1,373 +1,297 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="owoiOC521IgH_hDAsk7e91cCedd61ke7sE8vkSv_ono" />
+:root {
+    --color-primary: #1a5276;
+    --color-primary-dark: #154360;
+    --color-secondary: #e67e22;
+    --color-accent: #2980b9;
+    --color-text: #2c3e50;
+    --color-text-light: #5d6d7e;
+    --color-bg: #f8f9fa;
+    --color-white: #ffffff;
+    --color-whatsapp: #25d366;
+    --color-instagram: #e4405f;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+    --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
+    --radius: 16px;
+    --transition: all 0.3s ease;
+}
 
-    <!-- SEO Básico y Posicionamiento Local -->
-    <title>Reparaciones Mar del Plata | Servicio Técnico de Electrodomésticos y Soluciones Industriales</title> 
-    <meta name="description" content="Técnico electromecánico en Mar del Plata. Reparación de lavarropas, heladeras, aire acondicionado, soluciones industriales, termotanques, cafeteras y más. Diagnóstico preciso y garantía.">
-    <meta name="keywords" content="reparación lavarropas Mar del Plata, técnico heladeras, reparación aire acondicionado, soluciones industriales mdq, refrigeracion comercial, termotanques, electromecánico, Reparaciones Mar del Plata">
-    <meta name="author" content="Reparaciones Mar del Plata">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://reparacionesgonzamdq.com/">
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+    background: var(--color-bg);
+    overflow-x: hidden;
+}
 
-    <!-- Carga de Fuente Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    <!-- Hoja de Estilos Externa -->
-    <link rel="stylesheet" href="styles.css">
+/* Header y Navegación Principal */
+.header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);
+}
+.header-scrolled { box-shadow: var(--shadow-sm); }
+.header .container { display: flex; align-items: center; justify-content: space-between; height: 80px; }
 
-    <!-- Datos Estructurados Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Reparaciones Mar del Plata",
-      "alternateName": ["Servicio Técnico Mar del Plata", "Reparaciones MDQ"],
-      "url": "https://reparacionesgonzamdq.com/"
-    }
-    </script>
+.logo img { height: 55px; width: auto; border-radius: 8px; }
 
-    <!-- Open Graph / Redes Sociales -->
-    <meta property="og:title" content="Reparaciones Mar del Plata | Servicio Técnico & Soluciones Industriales">
-    <meta property="og:site_name" content="Reparaciones Mar del Plata">
-    <meta property="og:description" content="Reparación a domicilio de electrodomésticos y mantenimiento industrial en Mar del Plata. Diagnóstico preciso, repuestos de calidad y garantía asegurada.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://reparacionesgonzamdq.com/">
-    <meta property="og:image" content="https://reparacionesgonzamdq.com/logo.jpg">
+.nav { display: flex; gap: 32px; }
+.nav a {
+    text-decoration: none; color: var(--color-text); font-weight: 500; font-size: 15px;
+    position: relative; transition: var(--transition);
+}
+.nav a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+    background: var(--color-secondary); transition: var(--transition);
+}
+.nav a:hover { color: var(--color-primary); }
+.nav a:hover::after { width: 100%; }
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-</head>
-<body>
+.btn-whatsapp-header {
+    display: flex; align-items: center; gap: 8px; background: var(--color-whatsapp);
+    color: white; text-decoration: none; padding: 10px 20px; border-radius: 50px;
+    font-weight: 600; font-size: 14px; transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(37,211,102,0.3);
+}
+.btn-whatsapp-header svg { width: 18px; height: 18px; }
+.btn-whatsapp-header:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
 
-    <!-- Header y Navegación Principal -->
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="logo.jpg" alt="Reparaciones Mar del Plata Logo">
-            </a>
-            <nav class="nav">
-                <a href="#servicios">Servicios</a>
-                <a href="#sobre-mi">¿Por qué elegirnos?</a>
-                <a href="#opiniones">Opiniones</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-            <a href="https://wa.me/5492236743622?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20consultar%20por%20una%20reparaci%C3%B3n." class="btn-whatsapp-header" target="_blank">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.51 1.039 3.531l-.684 2.497 2.56-.671a5.733 5.733 0 002.853.765h.003c3.181 0 5.767-2.586 5.768-5.766 0-1.54-.599-2.989-1.688-4.079-1.09-1.089-2.539-1.688-4.083-1.688zm.003 10.05h-.002a4.248 4.248 0 01-2.164-.592l-.155-.093-1.602.42.428-1.563-.102-.162a4.258 4.258 0 01-.652-2.26c0-2.355 1.916-4.271 4.274-4.271 1.14 0 2.212.444 3.018 1.25.806.806 1.25 1.878 1.25 3.018 0 2.355-1.917 4.27-4.272 4.271z"/></svg>
-                WhatsApp
-            </a>
-        </div>
-    </header>
+/* Sección Hero */
+.hero {
+    position: relative;
+    background-color: #0d6efd;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10 10h80v80H10z' fill='none' stroke='rgba(255,255,255,0.15)' stroke-width='1'/%3E%3Cpath d='M30 10v30h40V10M10 50h30v40' fill='none' stroke='rgba(255,255,255,0.15)' stroke-width='1'/%3E%3Ccircle cx='30' cy='40' r='3' fill='rgba(255,255,255,0.25)'/%3E%3Ccircle cx='70' cy='40' r='3' fill='rgba(255,255,255,0.25)'/%3E%3Ccircle cx='40' cy='90' r='3' fill='rgba(255,255,255,0.25)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 50%, var(--color-accent) 100%);
+    background-size: 120px 120px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 160px;
+    overflow: hidden;
+}
 
-    <!-- Sección Hero -->
-    <section class="hero">
-        <div class="hero-content container">
-            <h1>🔧 <span>Reparaciones Mar del Plata</span></h1>
-            <p class="hero-subtitle">Técnico Electromecánico • Servicios Generales e Industriales<br>📍 Mar del Plata, Argentina</p>
-            
-            <div class="hero-buttons">
-                <a href="https://wa.me/5492236743622?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20consultar%20por%20una%20reparaci%C3%B3n." class="btn-primary" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.51 1.039 3.531l-.684 2.497 2.56-.671a5.733 5.733 0 002.853.765h.003c3.181 0 5.767-2.586 5.768-5.766 0-1.54-.599-2.989-1.688-4.079-1.09-1.089-2.539-1.688-4.083-1.688zm.003 10.05h-.002a4.248 4.248 0 01-2.164-.592l-.155-.093-1.602.42.428-1.563-.102-.162a4.258 4.258 0 01-.652-2.26c0-2.355 1.916-4.271 4.274-4.271 1.14 0 2.212.444 3.018 1.25.806.806 1.25 1.878 1.25 3.018 0 2.355-1.917 4.27-4.272 4.271z"/></svg>
-                    Consultar por WhatsApp
-                </a>
-                <a href="https://www.instagram.com/reparacionesmardelplata?igsi=MTJhOTMzeXpocGUxeg==" class="btn-instagram" target="_blank">
-                    📷 @reparacionesmardelplata
-                </a>
-                <a href="mailto:Reparacionesgonzamdq@reparacionesgonzamdq.com" class="btn-secondary">
-                    ✉️ Enviar Email
-                </a>
-            </div>
-        </div>
-    </section>
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.2) 100%);
+    pointer-events: none;
+}
 
-    <!-- Sección Servicios -->
-    <section id="servicios" class="servicios">
-        <div class="container">
-            <h2 class="section-title">Servicios que Ofrecemos</h2>
-            <p class="section-subtitle">
-                Brindamos servicio técnico especializado en reparación y mantenimiento electromecánico de electrodomésticos a domicilio e instalaciones comerciales e industriales en Mar del Plata.
-            </p>
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(5deg); }
+}
 
-            <div class="servicios-grid">
-                
-                <a href="soluciones-industriales.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">🏭</div>
-                        <h3>Soluciones Industriales</h3>
-                        <p>Electromecánica, refrigeración comercial, tableros de automatización y abonos de mantenimiento preventivo.</p>
-                    </div>
-                </a>
+.hero-content { position: relative; z-index: 2; max-width: 800px; }
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: white;
+    line-height: 1.2; margin-bottom: 24px;
+}
+.hero h1 span { color: var(--color-secondary); position: relative; }
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem); color: rgba(255,255,255,0.85);
+    margin-bottom: 40px; line-height: 1.7;
+}
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-                <a href="lavarropas.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">🧺</div>
-                        <h3>Lavarropas</h3>
-                        <p>Reparación de todas las marcas y modelos. Cambio de rulemanes, bombas, programadores y más.</p>
-                    </div>
-                </a>
+.btn-primary {
+    display: inline-flex; align-items: center; gap: 10px; background: var(--color-whatsapp);
+    color: white; text-decoration: none; padding: 16px 32px; border-radius: 50px;
+    font-weight: 600; font-size: 16px; transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+}
+.btn-primary svg { width: 20px; height: 20px; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
 
-                <a href="heladeras.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">❄️</div>
-                        <h3>Heladeras</h3>
-                        <p>Service completo. Cambio de motocompresores, recarga de gas, termostatos y circuitos.</p>
-                    </div>
-                </a>
+.btn-secondary {
+    display: inline-flex; align-items: center; gap: 10px; background: transparent;
+    color: white; text-decoration: none; padding: 16px 32px; border-radius: 50px;
+    font-weight: 600; font-size: 16px; border: 2px solid rgba(255,255,255,0.3);
+    transition: var(--transition);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: white; transform: translateY(-3px); }
 
-                <a href="aire-acondicionado.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">💨</div>
-                        <h3>Aire Acondicionado</h3>
-                        <p>Instalación, mantenimiento y reparación. Limpieza de filtros, recarga de gas refrigerante.</p>
-                    </div>
-                </a>
+/* Botón e Íconos para Instagram */
+.btn-instagram {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white; padding: 12px 20px; border-radius: 50px;
+    text-decoration: none; font-weight: 600; font-size: 0.9rem;
+    max-width: 100%; box-sizing: border-box; overflow-wrap: anywhere; word-break: break-all;
+    text-align: center; transition: var(--transition);
+}
+.btn-instagram:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(228,64,95,0.4); }
 
-                <a href="termotanques.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">💧</div>
-                        <h3>Termotanques</h3>
-                        <p>Reparación y mantenimiento. Cambio de resistencias, ánodos, válvulas y control de fugas.</p>
-                    </div>
-                </a>
+.hero-wave { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; }
+.hero-wave svg { width: 100%; height: auto; display: block; }
 
-                <a href="cafeteras.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">☕</div>
-                        <h3>Cafeteras</h3>
-                        <p>Reparación de cafeteras express y eléctricas. Cambio de resistencias, bombas y sellos.</p>
-                    </div>
-                </a>
+/* Títulos Generales */
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; text-align: center;
+    color: var(--color-primary); margin-bottom: 12px;
+}
+.section-subtitle {
+    text-align: center; color: var(--color-text-light); font-size: 1.1rem;
+    max-width: 600px; margin: 0 auto 48px;
+}
 
-                <a href="plomerias.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">🚿</div>
-                        <h3>Plomería</h3>
-                        <p>Destapaciones, reparación de canillas, cambio de cañerías y detección de pérdidas.</p>
-                    </div>
-                </a>
+/* Sección Servicios */
+.servicios { padding: 80px 0; background: var(--color-white); }
+.servicios-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;
+}
+.servicio-card {
+    background: var(--color-white); border-radius: var(--radius); padding: 36px 28px;
+    text-align: center; border: 1px solid rgba(0,0,0,0.06); transition: var(--transition);
+    opacity: 0; transform: translateY(30px);
+}
+.servicio-card.animate-in { opacity: 1; transform: translateY(0); transition: all 0.6s ease; }
+.servicio-card:nth-child(1) { transition-delay: 0.1s; }
+.servicio-card:nth-child(2) { transition-delay: 0.2s; }
+.servicio-card:nth-child(3) { transition-delay: 0.3s; }
+.servicio-card:nth-child(4) { transition-delay: 0.4s; }
+.servicio-card:nth-child(5) { transition-delay: 0.5s; }
+.servicio-card:nth-child(6) { transition-delay: 0.6s; }
+.servicio-card:hover {
+    transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--color-secondary);
+}
 
-                <a href="freidoras-de-aire.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">🍟</div>
-                        <h3>Freidoras de Aire</h3>
-                        <p>Servicio técnico de Air Fryer. Solución a fallas de encendido, resistencias y placas de control.</p>
-                    </div>
-                </a>
+.servicio-icon {
+    width: 64px; height: 64px; margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    border-radius: 16px; display: flex; align-items: center; justify-content: center;
+    color: white;
+}
+.servicio-icon svg { width: 32px; height: 32px; }
+.servicio-card h3 { font-size: 1.25rem; font-weight: 600; color: var(--color-primary); margin-bottom: 12px; }
+.servicio-card p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; }
 
-                <a href="aspiradoras-robot.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">🤖</div>
-                        <h3>Robots y Más</h3>
-                        <p>Reparación de aspiradoras robot, licuadoras, batidoras y otros pequeños electrodomésticos.</p>
-                    </div>
-                </a>
+/* Sección Sobre Mí / Estadísticas */
+.sobre-mi { padding: 80px 0; background: linear-gradient(180deg, var(--color-bg) 0%, #eef2f7 100%); }
+.sobre-mi-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.sobre-mi-texto h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; color: var(--color-primary); margin-bottom: 32px; }
 
-                <a href="placas-inverter.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">⚡</div>
-                        <h3>Placas Inverter</h3>
-                        <p>Reparación electrónica de placas para lavarropas, heladeras y aires acondicionados.</p>
-                    </div>
-                </a>
+.ventajas-lista { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+.ventajas-lista li {
+    display: flex; gap: 16px; align-items: flex-start; opacity: 0; transform: translateX(-30px);
+}
+.ventajas-lista li.animate-in { opacity: 1; transform: translateX(0); transition: all 0.5s ease; }
+.ventajas-lista li:nth-child(1) { transition-delay: 0.1s; }
+.ventajas-lista li:nth-child(2) { transition-delay: 0.2s; }
+.ventajas-lista li:nth-child(3) { transition-delay: 0.3s; }
+.ventajas-lista li:nth-child(4) { transition-delay: 0.4s; }
 
-                <a href="estufas.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">🔥</div>
-                        <h3>Estufas y Calefactores</h3>
-                        <p>Reparación y mantenimiento de estufas eléctricas, caloventores, radiadores y convectores.</p>
-                    </div>
-                </a>
+.check {
+    width: 32px; height: 32px; min-width: 32px; background: var(--color-secondary);
+    color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px; margin-top: 2px;
+}
+.ventajas-lista strong { display: block; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 4px; }
+.ventajas-lista p { color: var(--color-text-light); font-size: 0.95rem; }
 
-                <a href="cortadoras-de-pasto.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">🚜</div>
-                        <h3>Cortadoras de Pasto</h3>
-                        <p>Reparación de cortadoras a explosión y eléctricas. Puesta a punto, carburación y afilado.</p>
-                    </div>
-                </a>
+.stats-card {
+    background: var(--color-white); border-radius: var(--radius); padding: 40px;
+    box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: 28px;
+}
+.stat { text-align: center; padding: 20px; border-radius: 12px;
+    background: linear-gradient(135deg, rgba(26,82,118,0.05), rgba(41,128,185,0.05));
+    opacity: 0; transform: scale(0.9);
+}
+.stat.animate-in { opacity: 1; transform: scale(1); transition: all 0.5s ease; }
+.stat:nth-child(1) { transition-delay: 0.1s; }
+.stat:nth-child(2) { transition-delay: 0.2s; }
+.stat:nth-child(3) { transition-delay: 0.3s; }
+.stat-num { display: block; font-size: 2.5rem; font-weight: 700; color: var(--color-secondary); line-height: 1; }
+.stat-label { display: block; color: var(--color-text-light); font-size: 0.9rem; margin-top: 8px; }
 
-                <a href="aire-acondicionado-automovil.html" style="text-decoration: none;">
-                    <div class="servicio-card animate-in">
-                        <div class="servicio-icon">🚗❄️</div>
-                        <h3>Aire Automotor</h3>
-                        <p>Carga de gas refrigerante, prueba de fugas, mantenimiento preventivo y diagnóstico de compresión.</p>
-                    </div>
-                </a>
+/* Sección Contacto */
+.contacto { padding: 80px 0; background: var(--color-white); }
+.contacto-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+    max-width: 900px; margin: 0 auto;
+}
+.contacto-card {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 40px 28px; border-radius: var(--radius); text-decoration: none;
+    transition: var(--transition); border: 2px solid transparent;
+    opacity: 0; transform: translateY(30px);
+    max-width: 100%; box-sizing: border-box; overflow: hidden;
+}
+.contacto-card.animate-in { opacity: 1; transform: translateY(0); transition: all 0.5s ease; }
+.contacto-card:nth-child(1) { transition-delay: 0.1s; }
+.contacto-card:nth-child(2) { transition-delay: 0.2s; }
+.contacto-card:nth-child(3) { transition-delay: 0.3s; }
 
-            </div>
-        </div>
-    </section>
+.whatsapp-card { background: linear-gradient(135deg, #25d36615, #128c7e15); color: var(--color-text); }
+.whatsapp-card:hover { border-color: var(--color-whatsapp); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(37,211,102,0.2); }
 
-    <!-- Sección Sobre Mí / Beneficios -->
-    <section id="sobre-mi" class="sobre-mi">
-        <div class="container sobre-mi-content">
-            <div class="sobre-mi-texto">
-                <h2>¿Por qué elegirnos?</h2>
-                <ul class="ventajas-lista">
-                    <li class="animate-in">
-                        <div class="check">✓</div>
-                        <div>
-                            <strong><a href="diagnostico-preciso.html" style="color: inherit; text-decoration: none;">Diagnóstico Preciso</a></strong>
-                            <p>Identificamos el problema real de tu equipo rápidamente para evitar gastos innecesarios.</p>
-                        </div>
-                    </li>
-                    <li class="animate-in">
-                        <div class="check">✓</div>
-                        <div>
-                            <strong><a href="repuestos-de-calidad.html" style="color: inherit; text-decoration: none;">Repuestos de Calidad</a></strong>
-                            <p>Utilizamos componentes originales y garantizados para asegurar la durabilidad del trabajo.</p>
-                        </div>
-                    </li>
-                    <li class="animate-in">
-                        <div class="check">✓</div>
-                        <div>
-                            <strong><a href="garantia-asegurada.html" style="color: inherit; text-decoration: none;">Garantía Asegurada</a></strong>
-                            <p>Ofrecemos respuesta post-servicio y garantía por escrito en todas nuestras reparaciones.</p>
-                        </div>
-                    </li>
-                    <li class="animate-in">
-                        <div class="check">✓</div>
-                        <div>
-                            <strong><a href="atencion-rapida.html" style="color: inherit; text-decoration: none;">Atención Rápida</a></strong>
-                            <p>Coordinamos visitas técnicas con prontitud en todo Mar del Plata.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+.email-card { background: linear-gradient(135deg, rgba(26,82,118,0.08), rgba(41,128,185,0.08)); color: var(--color-text); }
+.email-card:hover { border-color: var(--color-primary); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(26,82,118,0.15); }
 
-            <div class="stats-card">
-                <div class="stat animate-in">
-                    <span class="stat-num">5.0 ★</span>
-                    <span class="stat-label">Calificación en Google Maps</span>
-                </div>
-                <div class="stat animate-in">
-                    <span class="stat-num">100%</span>
-                    <span class="stat-label">Garantía en Trabajos</span>
-                </div>
-                <div class="stat animate-in">
-                    <span class="stat-num">MDQ</span>
-                    <span class="stat-label">Cobertura en Toda la Ciudad</span>
-                </div>
-            </div>
-        </div>
-    </section>
+.instagram-card { background: linear-gradient(135deg, rgba(228,64,95,0.08), rgba(155,89,182,0.08)); color: var(--color-text); }
+.instagram-card:hover { border-color: var(--color-instagram); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(228,64,95,0.2); }
 
-    <!-- Reseñas / Opiniones de Clientes -->
-    <section id="opiniones" class="servicios" style="background: var(--color-bg);">
-        <div class="container">
-            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-            <p class="section-subtitle">⭐⭐⭐⭐⭐ (5.0 en Google Maps)</p>
+.contacto-icon {
+    width: 60px; height: 60px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; margin-bottom: 20px;
+}
+.whatsapp-card .contacto-icon { background: var(--color-whatsapp); color: white; }
+.email-card .contacto-icon { background: var(--color-primary); color: white; }
+.instagram-card .contacto-icon { background: var(--color-instagram); color: white; }
+.contacto-icon svg { width: 28px; height: 28px; }
 
-            <div class="servicios-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                
-                <div class="servicio-card animate-in" style="text-align: left; padding: 24px;">
-                    <strong style="color: var(--color-primary); font-size: 1.1rem; display: block;">Juani Ojeda</strong>
-                    <span style="font-size: 0.8rem; color: var(--color-text-light);">Hace un mes</span>
-                    <div style="color: #f1c40f; margin: 8px 0;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size: 0.9rem;">"Estamos muy conformes con su trabajo. Cumplió en tiempo y forma su trabajo."</p>
-                </div>
+.contacto-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; color: var(--color-primary); }
+.contacto-card p {
+    color: var(--color-text-light); font-size: 0.85rem; margin-bottom: 20px;
+    width: 100%; overflow-wrap: anywhere; word-break: break-all;
+}
+.contacto-btn { font-weight: 600; font-size: 0.85rem; color: var(--color-secondary); word-break: break-all; }
 
-                <div class="servicio-card animate-in" style="text-align: left; padding: 24px;">
-                    <strong style="color: var(--color-primary); font-size: 1.1rem; display: block;">Fernando Gonzalez</strong>
-                    <span style="font-size: 0.8rem; color: var(--color-text-light);">Hace 2 meses</span>
-                    <div style="color: #f1c40f; margin: 8px 0;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size: 0.9rem;">"Excelente trabajo, quedaron de diez las estufas!! Muy recomendable! Gracias!"</p>
-                </div>
+/* Pie de Página (Footer) */
+.footer { background: var(--color-primary-dark); color: white; padding: 60px 0 0; }
+.footer-content {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+    padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-logo img { height: 60px; width: auto; border-radius: 8px; margin-bottom: 16px; }
+.footer-logo p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; max-width: 300px; }
+.footer-links h4 { font-size: 1rem; font-weight: 600; margin-bottom: 20px; color: white; }
+.footer-links a, .footer-links span {
+    display: block; color: rgba(255,255,255,0.7); text-decoration: none;
+    margin-bottom: 12px; font-size: 0.95rem; transition: var(--transition);
+}
+.footer-links a:hover { color: var(--color-secondary); }
+.footer-bottom { padding: 24px 0; text-align: center; }
+.footer-bottom p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
 
-                <div class="servicio-card animate-in" style="text-align: left; padding: 24px;">
-                    <strong style="color: var(--color-primary); font-size: 1.1rem; display: block;">Matias Sasido</strong>
-                    <span style="font-size: 0.8rem; color: var(--color-text-light);">Hace 3 meses</span>
-                    <div style="color: #f1c40f; margin: 8px 0;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size: 0.9rem;">"Excelente atención, confiabilidad y rapidez. 100 x 100 recomendable."</p>
-                </div>
+/* Adaptación para pantallas pequeñas / móviles */
+@media (max-width: 768px) {
+    .header .container { height: 70px; }
+    .nav { display: none; }
+    .logo img { height: 45px; }
+    .btn-whatsapp-header { padding: 8px 14px; font-size: 13px; }
+    .hero { padding: 100px 20px 120px; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary, .btn-instagram { width: 100%; max-width: 280px; justify-content: center; }
+    .sobre-mi-content { grid-template-columns: 1fr; gap: 40px; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; gap: 32px; }
+    .footer-logo p { max-width: 100%; }
+    .stats-card { padding: 28px; }
+    .contacto-card p { font-size: 0.8rem; }
+}
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Banner Preguntas Frecuentes -->
-    <section class="container" style="padding: 40px 24px;">
-        <a href="preguntas-frecuentes.html" style="text-decoration: none;">
-            <div class="servicio-card animate-in" style="border: 2px solid var(--color-accent); background: var(--color-white);">
-                <span style="font-size: 2.5rem; display: block; margin-bottom: 10px;">❓</span>
-                <h3 style="font-size: 1.5rem;">Preguntas Frecuentes</h3>
-                <p>¿Tenés dudas sobre las zonas de cobertura, medios de pago o garantías? Haz clic aquí para ver más.</p>
-                <span style="color: var(--color-secondary); font-weight: 700; display: inline-block; margin-top: 12px;">Ver todas las preguntas frecuentes →</span>
-            </div>
-        </a>
-    </section>
-
-    <!-- Sección Contacto -->
-    <section id="contacto" class="contacto">
-        <div class="container">
-            <h2 class="section-title">¿Necesitás una reparación?</h2>
-            <p class="section-subtitle">Escribinos por WhatsApp, email o seguinos en Instagram para consultar tu presupuesto.</p>
-
-            <div class="contacto-grid">
-                
-                <a href="https://wa.me/5492236743622?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20consultar" class="contacto-card whatsapp-card animate-in" target="_blank">
-                    <div class="contacto-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.51 1.039 3.531l-.684 2.497 2.56-.671a5.733 5.733 0 002.853.765h.003c3.181 0 5.767-2.586 5.768-5.766 0-1.54-.599-2.989-1.688-4.079-1.09-1.089-2.539-1.688-4.083-1.688zm.003 10.05h-.002a4.248 4.248 0 01-2.164-.592l-.155-.093-1.602.42.428-1.563-.102-.162a4.258 4.258 0 01-.652-2.26c0-2.355 1.916-4.271 4.274-4.271 1.14 0 2.212.444 3.018 1.25.806.806 1.25 1.878 1.25 3.018 0 2.355-1.917 4.27-4.272 4.271z"/></svg>
-                    </div>
-                    <h3>WhatsApp</h3>
-                    <p>+54 9 223 674-3622</p>
-                    <span class="contacto-btn">Enviar mensaje →</span>
-                </a>
-
-                <a href="mailto:Reparacionesgonzamdq@reparacionesgonzamdq.com" class="contacto-card email-card animate-in">
-                    <div class="contacto-icon">✉️</div>
-                    <h3>Email</h3>
-                    <p>Reparacionesgonzamdq@reparacionesgonzamdq.com</p>
-                    <span class="contacto-btn">Enviar correo →</span>
-                </a>
-
-                <a href="https://www.instagram.com/reparacionesmardelplata?igsi=MTJhOTMzeXpocGUxeg==" class="contacto-card instagram-card animate-in" target="_blank">
-                    <div class="contacto-icon">📷</div>
-                    <h3>Instagram</h3>
-                    <p>@reparacionesmardelplata</p>
-                    <span class="contacto-btn">Ver perfil →</span>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Pie de Página (Footer) -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="logo.jpg" alt="Logo Footer">
-                <p>Servicio técnico electromecánico integral. Diagnóstico preciso, respuestas rápidas y garantía por escrito en Mar del Plata.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Enlaces Rápidos</h4>
-                <a href="#servicios">Servicios</a>
-                <a href="#sobre-mi">¿Por qué elegirnos?</a>
-                <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
-            </div>
-            <div class="footer-links">
-                <h4>Contacto</h4>
-                <a href="https://wa.me/5492236743622" target="_blank">WhatsApp</a>
-                <a href="https://www.instagram.com/reparacionesmardelplata" target="_blank">Instagram</a>
-                <span>Mar del Plata, Argentina</span>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>© 2026 Reparaciones Mar del Plata. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
+/* Scrollbar Personalizada */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary-dark); }
+Esto lo editaste?
