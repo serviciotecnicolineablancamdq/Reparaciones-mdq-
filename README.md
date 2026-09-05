@@ -9,6 +9,6 @@ Sitio web oficial de **Reparaciones Mar del Plata** - Servicio técnico especial
 
 ## 📍 Cobertura y Contacto
 * **Ubicación:** Mar del Plata, Buenos Aires, Argentina.
-* **Atención a Domicilio:** Presupuesto claro y repuestos garantizados.
-* **Sitio Web:** [https://serviciotecnicolineablancamdq.github.io/Reparaciones-mdq-/](https://serviciotecnicolineablancamdq.github.io/Reparaciones-mdq-/)
+* **Atención a Domicilio:** Diagnóstico en el acto, presupuesto claro y garantía escrita de 90 días.
+* **Sitio Web Oficial:** [https://reparacionesgonzamdq.com/](https://reparacionesgonzamdq.com/)
 * **Instagram:** [@reparacionesmardelplata](https://www.instagram.com/reparacionesmardelplata)
