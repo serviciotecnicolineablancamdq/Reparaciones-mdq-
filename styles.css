@@ -186,7 +186,17 @@ body {
 }
 .servicio-icon svg { width: 32px; height: 32px; }
 .servicio-card h3 { font-size: 1.25rem; font-weight: 600; color: var(--color-primary); margin-bottom: 12px; }
-.servicio-card p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; }
+.servicio-card p { 
+    color: var(--color-text-light); 
+    font-size: 0.95rem; 
+    line-height: 1.6; 
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.servicio-card a, 
+.servicio-card .btn-servicio {
+    margin-top: auto;
+}
 
 /* Sección Sobre Mí / Estadísticas */
 .sobre-mi { padding: 80px 0; background: linear-gradient(180deg, var(--color-bg) 0%, #eef2f7 100%); }
