@@ -39,6 +39,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
+    <!-- Google Fonts - Montserrat para encabezados -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -51,6 +56,11 @@
             line-height: 1.6;
             color: #333;
             background: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6, .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
         }
 
         /* Header / Hero */
@@ -92,7 +102,9 @@
         }
 
         header h1 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
@@ -181,8 +193,10 @@
         }
 
         .section-title {
+            font-family: 'Montserrat', sans-serif;
             text-align: center;
             font-size: 2rem;
+            font-weight: 700;
             color: #1a5276;
             margin-bottom: 20px;
             position: relative;
@@ -245,9 +259,11 @@
         }
 
         .service-card h3 {
+            font-family: 'Montserrat', sans-serif;
             color: #1a5276;
             margin-bottom: 10px;
             font-size: 1.2rem;
+            font-weight: 700;
         }
 
         .service-card p {
@@ -267,7 +283,9 @@
         }
 
         .contact-section h2 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 15px;
         }
 
@@ -399,11 +417,57 @@
         </div>
     </header>
 
+    <!-- Introducción de Servicios -->
+    <section id="introduccion" style="padding: 40px 20px; background: #f8f9fa; text-align: center; max-width: 1100px; margin: 0 auto;">
+      <h2 class="section-title" style="color: #1a5276;">Reparación de Electrodomésticos en Mar del Plata</h2>
+      <p class="section-description">
+        Técnicos a domicilio para toda la línea blanca y los electrodomésticos de tu casa. Coordinás la visita, el técnico se acerca al día siguiente y te llevás garantía escrita en cada reparación.
+      </p>
+      <p style="text-align: center; color: #555; max-width: 900px; margin: 0 auto 20px auto; font-size: 1rem; line-height: 1.7;">
+        En resumen: nos escribís por WhatsApp, contás qué equipo tenés y qué le pasa, coordinamos día y horario, y el técnico va a tu casa con las herramientas y repuestos para dejarlo funcionando.
+      </p>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section id="como-funciona" style="padding: 50px 20px; max-width: 1100px; margin: 0 auto;">
+      <h2 class="section-title">¿Cómo Funciona Nuestro Servicio?</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
+        
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 15px;">📱</div>
+          <h3 style="color: #1a5276; margin-bottom: 10px; font-size: 1.1rem;">Pedí tu visita técnica</h3>
+          <p style="color: #666; font-size: 0.95rem;">Escribís por WhatsApp, contás qué equipo tenés y qué le pasa.</p>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 15px;">🔧</div>
+          <h3 style="color: #1a5276; margin-bottom: 10px; font-size: 1.1rem;">El técnico se acerca</h3>
+          <p style="color: #666; font-size: 0.95rem;">Coordina día y horario. Se presenta al día siguiente en tu domicilio.</p>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 15px;">✅</div>
+          <h3 style="color: #1a5276; margin-bottom: 10px; font-size: 1.1rem;">Presupuesto antes de reparar</h3>
+          <p style="color: #666; font-size: 0.95rem;">El técnico diagnostica en tu casa y te pasa el presupuesto antes de arrancar.</p>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 15px;">🛡️</div>
+          <h3 style="color: #1a5276; margin-bottom: 10px; font-size: 1.1rem;">Garantía escrita</h3>
+          <p style="color: #666; font-size: 0.95rem;">Garantía escrita en cada reparación. Dejamos tu equipo 100% funcional.</p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Servicios -->
     <section id="servicios">
       <h2 class="section-title">Servicios que Ofrecemos</h2>
       <p class="section-description">
         Brindamos servicio técnico especializado en reparación y mantenimiento electromecánico de electrodomésticos a domicilio e instalaciones comerciales e industriales en Mar del Plata. Contamos con diagnóstico preciso, repuestos de calidad y garantía escrita.
+      </p>
+      <p style="text-align: center; color: #555; max-width: 900px; margin: 0 auto 40px auto; font-size: 0.95rem; line-height: 1.7;">
+        Trabajamos heladeras, lavarropas, aires, termotanques, microondas y todos los equipos del hogar, además de refrigeración comercial. Coordinás una visita y el técnico se acerca con el equipamiento para diagnosticar y reparar en el momento. Te dejamos tu equipo andando con garantía por escrito.
       </p>
 
       <div class="services-grid">
