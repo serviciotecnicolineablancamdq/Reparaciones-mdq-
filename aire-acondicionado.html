@@ -74,6 +74,10 @@
       color: #111827;
       font-size: 1.8em;
     }
+    h2 {
+      color: #111827;
+      margin-top: 30px;
+    }
     .pasos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -85,6 +89,45 @@
       padding: 15px;
       border-radius: 8px;
       border-left: 4px solid #007bff;
+    }
+    .fallas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    .falla-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      border: 1px solid #eaeaea;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .falla-icon-box {
+      width: 45px;
+      height: 45px;
+      background: #e7f5ff;
+      color: #007bff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    .falla-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1em;
+      color: #111827;
+    }
+    .falla-card p {
+      margin: 0;
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.4;
     }
     .info-box {
       background: #e7f5ff;
@@ -157,9 +200,74 @@
       font-size: 1em;
       font-weight: bold;
     }
+
+    /* Estilos para servicios adicionales y mapa */
+    .servicios-adicionales {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+      border: 1px solid #eaeaea;
+    }
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+    .servicios-grid li {
+      color: #4b5563;
+      font-size: 0.95em;
+      margin-bottom: 6px;
+    }
+    .horario-badge {
+      display: inline-block;
+      background: #e7f5ff;
+      color: #007bff;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .mapa-container {
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+
+    /* Botón flotante de WhatsApp siempre visible */
+    .whatsapp-flotante {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .whatsapp-flotante:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP CON TU NÚMERO 2236743622 -->
+  <a href="https://wa.me/5492236743622?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20consultar%20por%20el%20servicio%20de%20Aire%20Acondicionado:%20https://reparacionesgonzamdq.com/aire-acondicionado.html" class="whatsapp-flotante" target="_blank" title="Consultar por WhatsApp">
+    📱
+  </a>
 
   <div class="container">
     <a href="index.html" class="btn-volver">← Volver al inicio</a>
@@ -225,6 +333,107 @@
       <p style="font-weight: bold; margin-bottom: 10px;">Trabajo de instalación/reparación realizado en Mar del Plata:</p>
       <img src="IMG_20260608_161906.jpg" alt="Instalación y reparación de aire acondicionado en Mar del Plata" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
     </div>
+
+    <!-- SECCIÓN DE FALLAS DE AIRE ACONDICIONADO -->
+    <h2 style="margin-top: 40px;">Fallas comunes que resolvemos</h2>
+    <p><strong>¿Qué le pasa a tu equipo?</strong> Identificá el problema y te lo solucionamos:</p>
+
+    <div class="fallas-grid">
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🌡️</div>
+          <h3>No enfría o no calienta</h3>
+          <p>Falta de gas refrigerante, bajo rendimiento o problemas en el compresor.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">💧</div>
+          <h3>Pierde agua por la unidad interior</h3>
+          <p>Desagüe tapado, condensación o mala nivelación del equipo.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">⚡</div>
+          <h3>No enciende o salta la térmica</h3>
+          <p>Falla en la alimentación eléctrica, tarjeta electrónica o capacitor.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🔊</div>
+          <h3>Hace ruido o vibra demasiado</h3>
+          <p>Problemas en el forzador, soporte flojo o rodamientos desgastados.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">💨</div>
+          <h3>Mal olor al encender</h3>
+          <p>Acumulación de hongos, humedad y suciedad en los filtros y serpentina.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🛠️</div>
+          <h3>Instalación y desinstalación</h3>
+          <p>Colocación profesional con vacuómetro, prueba de presión y materiales de calidad.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>❄️ Mantenimiento preventivo y carga de gas</h3>
+      <p style="margin: 0; color: #333;">Recomendamos realizar una limpieza y chequeo anual para asegurar el máximo rendimiento y bajo consumo de tu equipo.</p>
+    </div>
+    <!-- FIN SECCIÓN DE FALLAS -->
+
+    <!-- SECCIÓN DE HORARIOS, OTROS SERVICIOS Y UBICACIÓN CON MAPA -->
+    <div class="servicios-adicionales">
+      <h2>Horarios de atención</h2>
+      <p>Estamos disponibles para coordinar turnos y consultas en el siguiente horario:</p>
+      <div class="horario-badge">🕒 Lunes a sábado de 8 a 20 hs</div>
+
+      <h2 style="margin-top: 30px;">Otros servicios técnicos que realizamos</h2>
+      <p>Brindamos soluciones integrales de reparación y service a domicilio en Mar del Plata:</p>
+      <ul class="servicios-grid">
+        <li>Service de lavarropas</li>
+        <li>Service de secarropas</li>
+        <li>Service de lavavajillas</li>
+        <li>Service de heladeras</li>
+        <li>Reparación de freezers</li>
+        <li>Service de aire acondicionado</li>
+        <li>Instalación de aire</li>
+        <li>Service de bombas de agua</li>
+        <li>Termotanques eléctricos</li>
+        <li>Cafeteras y electrodomésticos</li>
+        <li>Cortadoras de césped y motoguadañas</li>
+        <li>Cámaras frigoríficas</li>
+      </ul>
+
+      <h2 style="margin-top: 30px;">Ubicación y Cobertura</h2>
+      <p>Atendemos en toda la zona de Mar del Plata y la costa:</p>
+      
+      <div class="mapa-container">
+        <!-- Mapa de Google centrado en Mar del Plata -->
+        <iframe 
+          width="100%" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100488.0827103444!2d-57.59312953257914!3d-38.00228392576579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14778d912445cc6f%3A0x7d0a6473aa312b6f!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1710000000000!5m2!1ses!2sar">
+        </iframe>
+      </div>
+    </div>
+
   </div>
 
 </body>
