@@ -74,6 +74,10 @@
       color: #111827;
       font-size: 1.8em;
     }
+    h2 {
+      color: #111827;
+      margin-top: 30px;
+    }
     .pasos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -85,6 +89,45 @@
       padding: 15px;
       border-radius: 8px;
       border-left: 4px solid #007bff;
+    }
+    .fallas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    .falla-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      border: 1px solid #eaeaea;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .falla-icon-box {
+      width: 45px;
+      height: 45px;
+      background: #e7f5ff;
+      color: #007bff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    .falla-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1em;
+      color: #111827;
+    }
+    .falla-card p {
+      margin: 0;
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.4;
     }
     .info-box {
       background: #fff9db;
@@ -225,8 +268,76 @@
       <p style="font-weight: bold; margin-bottom: 10px;">Trabajo de reparación de cortadora de pasto realizado en Mar del Plata:</p>
       <img src="jFtQBxue1637086860.jpg" alt="Máquinas de cortar pasto reparadas en Mar del Plata" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
     </div>
+
+    <!-- SECCIÓN DE FALLAS ABAJO DE LA ÚLTIMA IMAGEN -->
+    <h2 style="margin-top: 40px;">Fallas que resolvemos</h2>
+    <p><strong>Qué le arreglamos a tu cortadora.</strong> Si tu cortadora hace alguna de estas, la reparamos:</p>
+
+    <div class="fallas-grid">
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">⚡</div>
+          <h3>No arranca ni enciende</h3>
+          <p>Cable, motor, tirador de arranque o batería según el modelo.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">📉</div>
+          <h3>Le falta fuerza o se apaga sola</h3>
+          <p>Pierde potencia a mitad del corte.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">✂️</div>
+          <h3>Corta disparejo o deja mechones</h3>
+          <p>Cuchilla desafilada, floja o dañada.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">⚙️</div>
+          <h3>Hace ruido raro, vibra o traquetea</h3>
+          <p>Algo suelto o gastado adentro.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🔥</div>
+          <h3>Echa humo o cuesta arrancarla (a nafta)</h3>
+          <p>Bujía, carburador o filtro.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🔋</div>
+          <h3>La batería no carga o dura poco (a batería)</h3>
+          <p>Batería o cargador.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🌡️</div>
+          <h3>Recalienta y frena</h3>
+          <p>Ventilación, motor o correa.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box" style="background: #e7f5ff; border: 1px solid #74c0fc; margin-bottom: 0;">
+      <h3 style="color: #1c7ed6;">🛠️ ¿Tu problema no está en la lista?</h3>
+      <p style="margin: 0; color: #333;">Igual pasamos a verla: <strong>primero diagnóstico, después te decimos qué necesita.</strong></p>
+    </div>
+    <!-- FIN DE LA SECCIÓN DE FALLAS -->
+
   </div>
 
 </body>
 </html>
-
