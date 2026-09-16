@@ -23,6 +23,11 @@
   <!-- Favicon -->
   <link rel="icon" href="logo.jpg" type="image/jpeg">
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Datos Estructurados Schema.org para Google Local -->
   <script type="application/ld+json">
   {
@@ -48,44 +53,106 @@
   </script>
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f6f9;
       color: #333;
+      line-height: 1.6;
     }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
     .container {
       max-width: 800px;
       margin: 30px auto;
-      padding: 20px;
+      padding: 25px;
       background: #ffffff;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
+
     .btn-volver {
       display: inline-block;
       margin-bottom: 20px;
-      color: #007bff;
+      color: #1a5276;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
+
+    .btn-volver:hover {
+      text-decoration: underline;
+    }
+
     h1 {
-      color: #111827;
-      font-size: 1.8em;
+      color: #1a5276;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
     }
+
+    h2 {
+      color: #1a5276;
+      font-size: 1.3rem;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
     .pasos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 15px;
-      margin: 25px 0;
+      margin: 20px 0;
     }
+
     .paso-card {
       background: #f8f9fa;
       padding: 15px;
       border-radius: 8px;
-      border-left: 4px solid #007bff;
+      border-left: 4px solid #2980b9;
     }
+
+    .paso-card h3 {
+      font-size: 1.05rem;
+      color: #1a5276;
+      margin-bottom: 8px;
+    }
+
+    .paso-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Fallas Comunes */
+    .fallas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 15px 0 25px 0;
+    }
+
+    .falla-item {
+      background: #fff8f8;
+      border: 1px solid #ffd8d8;
+      border-radius: 8px;
+      padding: 12px 15px;
+      font-size: 0.95rem;
+    }
+
+    .falla-item strong {
+      color: #c0392b;
+      display: block;
+      margin-bottom: 3px;
+    }
+
     .info-box {
       background: #fff9db;
       border: 1px solid #ffe066;
@@ -93,43 +160,97 @@
       padding: 15px 20px;
       margin: 25px 0;
     }
+
     .info-box h3 {
       margin-top: 0;
       color: #856404;
+      font-size: 1.1rem;
     }
+
+    /* Info Horarios y Cobertura */
+    .info-box-extra {
+      background: #e7f5ff;
+      border: 1px solid #74c0fc;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+
     .garantia-box {
       background: #e6fcf5;
       border: 1px solid #63e6be;
       border-radius: 8px;
       padding: 15px 20px;
-      margin: 20px 0;
+      margin: 25px 0;
       text-align: center;
     }
+
     .garantia-box h3 {
       margin: 0 0 5px 0;
       color: #0ca678;
     }
+
     .marcas-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 15px;
     }
+
     .marca-tag {
       background: #e9ecef;
       padding: 6px 12px;
       border-radius: 20px;
-      font-weight: bold;
-      font-size: 0.9em;
+      font-weight: 600;
+      font-size: 0.85rem;
       color: #495057;
     }
+
+    /* Otros servicios grid */
+    .otros-servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .otro-servicio-link {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #1a5276;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .otro-servicio-link:hover {
+      background: #e2e6ea;
+    }
+
     .cta-container {
       text-align: center;
       margin-top: 35px;
       padding: 25px;
-      background: #e7f5ff;
+      background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+      color: white;
       border-radius: 10px;
     }
+
+    .cta-container h2 {
+      color: white;
+      margin-top: 0;
+    }
+
+    .cta-container p {
+      opacity: 0.95;
+      margin-bottom: 20px;
+    }
+
     .cta-buttons {
       display: flex;
       gap: 10px;
@@ -137,6 +258,7 @@
       flex-wrap: wrap;
       margin-top: 15px;
     }
+
     .btn-whatsapp {
       display: inline-block;
       background-color: #25d366;
@@ -144,9 +266,16 @@
       padding: 12px 20px;
       border-radius: 25px;
       text-decoration: none;
-      font-size: 1em;
+      font-size: 1rem;
       font-weight: bold;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
+
+    .btn-whatsapp:hover {
+      transform: scale(1.02);
+    }
+
     .btn-instagram {
       display: inline-block;
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
@@ -154,8 +283,47 @@
       padding: 12px 20px;
       border-radius: 25px;
       text-decoration: none;
-      font-size: 1em;
+      font-size: 1rem;
       font-weight: bold;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .btn-instagram:hover {
+      transform: scale(1.02);
+    }
+
+    /* Botón flotante de WhatsApp */
+    .whatsapp-flotante {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-flotante:hover {
+      transform: scale(1.1);
+    }
+
+    /* Mapa responsive */
+    .map-container {
+      margin-top: 25px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #ddd;
     }
   </style>
 </head>
@@ -166,6 +334,26 @@
 
     <h1>Servicio Técnico y Reparación de Cafeteras en Mar del Plata ☕</h1>
     <p>Mantenimiento preventivo, descalcificación y reparación integral de cafeteras express, de cápsula y eléctricas de filtro en taller en Mar del Plata.</p>
+
+    <h2>Fallas comunes en cafeteras</h2>
+    <div class="fallas-grid">
+      <div class="falla-item">
+        <strong>No sale agua o baja presión</strong>
+        Bomba trabada, obstrucción por sarro (calcificación) o circuitos tapados.
+      </div>
+      <div class="falla-item">
+        <strong>Pérdida de agua</strong>
+        Sellos y o-rings vencidos, mangueras desconectadas o fisuras en el portafiltro.
+      </div>
+      <div class="falla-item">
+        <strong>No enciende o no calienta</strong>
+        Falla en la placa electrónica, termostato dañado o resistencia quemada.
+      </div>
+      <div class="falla-item">
+        <strong>El café sale frío</strong>
+        Problema en el sistema de calefacción o sensor de temperatura descalibrado.
+      </div>
+    </div>
 
     <h2>¿Cómo trabajamos en el taller?</h2>
     <div class="pasos-grid">
@@ -185,12 +373,18 @@
 
     <div class="info-box">
       <h3>📌 Aclaración sobre repuestos y pagos</h3>
-      <p>Los gastos de repuestos corren a cargo del cliente. Podrás abonarlos mediante transferencia bancaria previa al inicio del arreglo o al retirar la máquina.</p>
+      <p style="margin: 0;">Los gastos de repuestos corren a cargo del cliente. Podrás abonarlos mediante transferencia bancaria previa al inicio del arreglo o al retirar la máquina.</p>
     </div>
 
     <div class="garantia-box">
       <h3>🛡️ Garantía Escrita de 90 Días</h3>
       <p style="margin: 0;">Todos nuestros trabajos en cafeteras cuentan con <strong>3 meses (90 días) de garantía</strong> en repuestos y mano de obra.</p>
+    </div>
+
+    <div class="info-box-extra">
+      <p style="margin: 0 0 8px 0;">⏰ <strong>Horarios de atención en taller:</strong> Lunes a Sábados en horarios a coordinar.</p>
+      <p style="margin: 0 0 8px 0;">📍 <strong>Ubicación:</strong> Mar del Plata (consultar dirección exacta por WhatsApp).</p>
+      <p style="margin: 0;">💳 <strong>Medios de pago:</strong> Efectivo o transferencia bancaria.</p>
     </div>
 
     <h2>Marcas de cafeteras con las que trabajamos</h2>
@@ -212,6 +406,14 @@
       <span class="marca-tag">Yelmo</span>
     </div>
 
+    <h2 style="margin-top: 30px;">Otros servicios que ofrecemos</h2>
+    <div class="otros-servicios">
+      <a href="lavarropas.html" class="otro-servicio-link">🧺 Lavarropas</a>
+      <a href="termotanques.html" class="otro-servicio-link">💧 Termotanques</a>
+      <a href="heladeras.html" class="otro-servicio-link">❄️ Heladeras</a>
+      <a href="aire-acondicionado.html" class="otro-servicio-link">💨 Aires Acondicionados</a>
+    </div>
+
     <div class="cta-container">
       <h2>¿Tu cafetera pierde agua o no junta presión?</h2>
       <p>Consultanos por la dirección del taller o coordiná la entrega de tu equipo.</p>
@@ -223,10 +425,21 @@
     </div>
 
     <div style="margin-top: 25px; text-align: center;">
-      <p style="font-weight: bold; margin-bottom: 10px;">Trabajo de reparación de cafetera realizado en Mar del Plata:</p>
+      <p style="font-weight: bold; margin-bottom: 10px; color: #1a5276;">Trabajo de reparación de cafetera realizado en Mar del Plata:</p>
       <img src="IMG_20260523_141519.jpg" alt="Reparación de cafetera en Mar del Plata" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+    </div>
+
+    <!-- Mapa de Mar del Plata -->
+    <div class="map-container">
+      <iframe width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100420.25055008544!2d-57.61317517173273!3d-38.00228308425942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d930f340a6ad%3A0x86338cf9e2c43c2!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1650000000000!5m2!1ses!2sar"></iframe>
     </div>
   </div>
 
+  <!-- Botón Flotante de WhatsApp -->
+  <a href="https://wa.me/5492236743622?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20consultar%20por%20reparaci%C3%B3n%20de%20cafetera." class="whatsapp-flotante" target="_blank" title="Escribinos por WhatsApp">
+    💬
+  </a>
+
 </body>
 </html>
+
