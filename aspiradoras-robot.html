@@ -18,7 +18,7 @@
   <meta property="og:description" content="Mantenimiento y servicio técnico especializado de aspiradoras robot en Mar del Plata. Cambio de baterías, sensores y motores con garantía.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://reparacionesgonzamdq.com/aspiradoras-robot.html">
-  <meta property="og:image" content="https://reparacionesgonzamdq.com/logo.jpg">
+  <meta property="og:image" content="https://reparacionesgonzamdq.com/RoombaCombo_j7_j7_Graphite_Photo_Studio_Base_LeftFacing_PadLifting_Phone_Overlay_4000x4000-scaled.jpg">
 
   <!-- Favicon -->
   <link rel="icon" href="logo.jpg" type="image/jpeg">
@@ -74,6 +74,10 @@
       color: #111827;
       font-size: 1.8em;
     }
+    h2 {
+      color: #111827;
+      margin-top: 30px;
+    }
     .pasos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -85,6 +89,45 @@
       padding: 15px;
       border-radius: 8px;
       border-left: 4px solid #007bff;
+    }
+    .fallas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    .falla-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      border: 1px solid #eaeaea;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .falla-icon-box {
+      width: 45px;
+      height: 45px;
+      background: #e7f5ff;
+      color: #007bff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    .falla-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1em;
+      color: #111827;
+    }
+    .falla-card p {
+      margin: 0;
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.4;
     }
     .info-box {
       background: #fff9db;
@@ -157,9 +200,74 @@
       font-size: 1em;
       font-weight: bold;
     }
+
+    /* Estilos para servicios adicionales y mapa */
+    .servicios-adicionales {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+      border: 1px solid #eaeaea;
+    }
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+    .servicios-grid li {
+      color: #4b5563;
+      font-size: 0.95em;
+      margin-bottom: 6px;
+    }
+    .horario-badge {
+      display: inline-block;
+      background: #e7f5ff;
+      color: #007bff;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .mapa-container {
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+
+    /* Botón flotante de WhatsApp siempre visible */
+    .whatsapp-flotante {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .whatsapp-flotante:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP CON TU NÚMERO 2236743622 -->
+  <a href="https://wa.me/5492236743622?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20consultar%20por%20Aspiradoras%20Robot:%20https://reparacionesgonzamdq.com/aspiradoras-robot.html" class="whatsapp-flotante" target="_blank" title="Consultar por WhatsApp">
+    📱
+  </a>
 
   <div class="container">
     <a href="index.html" class="btn-volver">← Volver al inicio</a>
@@ -185,13 +293,68 @@
 
     <div class="info-box">
       <h3>📌 Aclaración importante sobre repuestos y pagos</h3>
-      <p>Los gastos de repuestos e insumos (baterías, motores, sensores, placas) corren a cargo del cliente. Podrás abonarlos vía transferencia previa al inicio del trabajo o al retirar el equipo.</p>
+      <p style="margin: 0;">Los gastos de repuestos e insumos (baterías, motores, sensores, placas) corren a cargo del cliente. Podrás abonarlos vía transferencia previa al inicio del trabajo o al retirar el equipo.</p>
     </div>
 
     <div class="garantia-box">
       <h3>🛡️ Garantía Escrita de 90 Días</h3>
       <p style="margin: 0;">Todas nuestras reparaciones cuentan con <strong>3 meses (90 días) de garantía</strong> en repuestos y mano de obra.</p>
     </div>
+
+    <!-- SECCIÓN DE FALLAS DE ASPIRADORAS ROBOT -->
+    <h2 style="margin-top: 40px;">Fallas comunes en aspiradoras robot que resolvemos</h2>
+    <p><strong>¿Qué problema presenta tu equipo?</strong> Detectamos y reparamos:</p>
+
+    <div class="fallas-grid">
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🔋</div>
+          <h3>No retiene carga o dura muy poco</h3>
+          <p>Desgaste de celdas o fin de la vida útil de la batería. Realizamos reemplazo por batería nueva compatible.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🔌</div>
+          <h3>No carga en la base o da error de base</h3>
+          <p>Problemas en los bornes de carga, circuitos de la base o falla en el sistema de alimentación interno del robot.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🛑</div>
+          <h3>Error de sensores o choques constantes</h3>
+          <p>Sensores de desnivel (caída) o parachoques frontales sucios, descalibrados o dañados por golpes.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">⚙️</div>
+          <h3>Ruedas trabadas o cepillos que no giran</h3>
+          <p>Atasco por cabellos/pelusa o rotura en los pequeños motores y engranajes de tracción o cepillo lateral/central.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">🗺️</div>
+          <h3>Se pierde o no mapea bien la casa</h3>
+          <p>Falla en la torreta láser (LIDAR), suciedad en ópticas o problemas de software y giroscopio.</p>
+        </div>
+      </div>
+
+      <div class="falla-card">
+        <div>
+          <div class="falla-icon-box">💨</div>
+          <h3>Poca potencia de succión o ruido raro</h3>
+          <p>Turbina de succión obstruida, filtros saturados o desgaste en el motor del ventilador interno.</p>
+        </div>
+      </div>
+    </div>
+    <!-- FIN SECCIÓN DE FALLAS -->
 
     <h2>Marcas de aspiradoras robot con las que trabajamos</h2>
     <p>Atendemos todas las marcas del mercado nacional e importado en Mar del Plata:</p>
@@ -225,6 +388,47 @@
       <p style="font-weight: bold; margin-bottom: 10px;">Trabajo de reparación de aspiradora robot realizado en Mar del Plata:</p>
       <img src="RoombaCombo_j7_j7_Graphite_Photo_Studio_Base_LeftFacing_PadLifting_Phone_Overlay_4000x4000-scaled.jpg" alt="Aspiradora Roomba reparada en Mar del Plata" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
     </div>
+
+    <!-- SECCIÓN DE HORARIOS, OTROS SERVICIOS Y UBICACIÓN CON MAPA -->
+    <div class="servicios-adicionales">
+      <h2>Horarios de atención en taller</h2>
+      <p>Estamos disponibles para recibir equipos y coordinar entregas en el siguiente horario:</p>
+      <div class="horario-badge">🕒 Lunes a sábado de 8 a 20 hs</div>
+
+      <h2 style="margin-top: 30px;">Otros servicios técnicos que realizamos</h2>
+      <p>Brindamos soluciones integrales de reparación y service en Mar del Plata:</p>
+      <ul class="servicios-grid">
+        <li>Service de lavarropas</li>
+        <li>Service de secarropas</li>
+        <li>Service de lavavajillas</li>
+        <li>Service de heladeras</li>
+        <li>Reparación de freezers</li>
+        <li>Service de aire acondicionado</li>
+        <li>Instalación de aire</li>
+        <li>Service de bombas de agua</li>
+        <li>Termotanques eléctricos</li>
+        <li>Cafeteras y electrodomésticos</li>
+        <li>Cortadoras de césped y motoguadañas</li>
+        <li>Cámaras frigoríficas</li>
+      </ul>
+
+      <h2 style="margin-top: 30px;">Ubicación y Cobertura</h2>
+      <p>Atendemos desde Mar del Plata para toda la zona:</p>
+      
+      <div class="mapa-container">
+        <!-- Mapa de Google centrado en Mar del Plata -->
+        <iframe 
+          width="100%" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100488.0827103444!2d-57.59312953257914!3d-38.00228392576579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14778d912445cc6f%3A0x7d0a6473aa312b6f!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1710000000000!5m2!1ses!2sar">
+        </iframe>
+      </div>
+    </div>
+
   </div>
 
 </body>
