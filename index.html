@@ -226,6 +226,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+            justify-content: center;
         }
 
         .service-card {
@@ -548,7 +549,7 @@
             </div>
         </a>
 
-        <!-- Tarjeta Soluciones Industriales (Ubicada al final) -->
+        <!-- Tarjeta Soluciones Industriales -->
         <a href="soluciones-industriales.html" style="text-decoration: none; color: inherit;">
           <div class="service-card card-industrial">
             <div class="service-icon">🏭</div>
@@ -558,10 +559,18 @@
           </div>
         </a>
 
+        <!-- Tarjeta extra para rellenar el espacio vacío y sumar consultas por WhatsApp -->
+        <div class="service-card" style="background: linear-gradient(135deg, #e7f5ff 0%, #d0ebff 100%); border: 2px dashed #339af0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 25px;">
+          <div style="font-size: 2.5rem; margin-bottom: 10px;">💬</div>
+          <h3 style="color: #1a5276; font-size: 1.1rem; margin-bottom: 8px;">¿Tenés otro electrodoméstico?</h3>
+          <p style="color: #495057; font-size: 0.9em; margin-bottom: 15px;">Consultanos por cualquier equipo o marca. Lo revisamos en nuestro taller en Mar del Plata.</p>
+          <a href="https://wa.me/5492236743622?text=Hola!%20Tengo%20un%20electrodoméstico%20que%20no%20está%20en%20la%20lista,%20quería%20consultarles." target="_blank" style="background: #25D366; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.85em; font-weight: bold;">Consultar por WhatsApp</a>
+        </div>
+
       </div>
     </section>
 
-    <!-- Cómo Funciona (Movido justo después de Soluciones Industriales) -->
+    <!-- Cómo Funciona -->
     <section id="como-funciona" style="padding: 50px 20px; max-width: 1100px; margin: 0 auto;">
       <h2 class="section-title">¿Cómo Funciona Nuestro Servicio?</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
