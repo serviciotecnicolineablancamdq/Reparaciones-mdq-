@@ -257,6 +257,13 @@
         .service-icon {
             font-size: 3rem;
             margin-bottom: 15px;
+            display: inline-block;
+            transition: transform 0.3s ease; /* Transición suave para el movimiento */
+        }
+
+        /* Efecto al pasar el mouse por la tarjeta: gira y agranda el icono */
+        .service-card:hover .service-icon {
+            transform: rotate(12deg) scale(1.15);
         }
 
         .service-card h3 {
@@ -561,7 +568,7 @@
 
         <!-- Tarjeta extra 1 para completar la fila -->
         <div class="service-card" style="background: linear-gradient(135deg, #e7f5ff 0%, #d0ebff 100%); border: 2px dashed #339af0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 25px;">
-          <div style="font-size: 2.5rem; margin-bottom: 10px;">💬</div>
+          <div class="service-icon" style="font-size: 2.5rem; margin-bottom: 10px;">💬</div>
           <h3 style="color: #1a5276; font-size: 1.1rem; margin-bottom: 8px;">¿Tenés otro electrodoméstico?</h3>
           <p style="color: #495057; font-size: 0.9em; margin-bottom: 15px;">Consultanos por cualquier equipo o marca. Lo revisamos en nuestro taller en Mar del Plata.</p>
           <a href="https://wa.me/5492236743622?text=Hola!%20Tengo%20un%20electrodoméstico%20que%20no%20está%20en%20la%20lista,%20quería%20consultarles." target="_blank" style="background: #25D366; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.85em; font-weight: bold;">Consultar por WhatsApp</a>
@@ -569,7 +576,7 @@
 
         <!-- Tarjeta extra 2 para cerrar perfectamente la fila de 3 columnas -->
         <div class="service-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px dashed #ced4da; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 25px;">
-          <div style="font-size: 2.5rem; margin-bottom: 10px;">🛡️</div>
+          <div class="service-icon" style="font-size: 2.5rem; margin-bottom: 10px;">🛡️</div>
           <h3 style="color: #1a5276; font-size: 1.1rem; margin-bottom: 8px;">Garantía y Confianza</h3>
           <p style="color: #495057; font-size: 0.9em; margin-bottom: 15px;">Trabajos profesionales con garantía escrita en repuestos y mano de obra en Mar del Plata.</p>
           <a href="https://wa.me/5492236743622?text=Hola!%20Quería%20consultar%20por%20las%20garantías%20y%20presupuestos." target="_blank" style="background: #1a5276; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.85em; font-weight: bold;">Saber más</a>
