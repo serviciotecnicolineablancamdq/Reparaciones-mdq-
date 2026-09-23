@@ -249,29 +249,20 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
 
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(5deg); /* Efecto zoom y giro suave al pasar el mouse por la tarjeta */
+        }
+
         .service-card.card-industrial {
             background: #f8fafc;
             border: 2px solid #0f2b48;
-        }
-
-        /* Definición de la animación constante (efecto flotar) */
-        @keyframes flotarIcono {
-            0% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-8px) rotate(5deg);
-            }
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
         }
 
         .service-icon {
             font-size: 3rem;
             margin-bottom: 15px;
             display: inline-block;
-            animation: flotarIcono 3.5s ease-in-out infinite; /* Movimiento constante automático */
+            transition: transform 0.3s ease; /* Transición fluida para el efecto hover */
         }
 
         .service-card h3 {
