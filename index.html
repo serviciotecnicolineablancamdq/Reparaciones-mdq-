@@ -580,6 +580,86 @@
           <p style="color: #495057; font-size: 0.9em; margin-bottom: 15px;">Trabajos profesionales con garantía escrita en repuestos y mano de obra en Mar del Plata.</p>
           <a href="https://wa.me/5492236743622?text=Hola!%20Quería%20consultar%20por%20las%20garantías%20y%20presupuestos." target="_blank" style="background: #1a5276; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.85em; font-weight: bold;">Saber más</a>
         </div>
+          <section id="presupuesto-inmediato" style="padding: 50px 20px; background: #f8fafc; border-radius: 20px; margin: 40px auto; max-width: 900px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h2 style="font-family: 'Montserrat', sans-serif; color: #1a5276; font-size: 1.8rem; margin-bottom: 10px;">Solicitud de Presupuesto Inmediato</h2>
+        <p style="color: #555; font-size: 1rem;">Completá los datos y envianos tu consulta directamente a nuestro WhatsApp técnico</p>
+    </div>
+
+    <form id="whatsappForm" onsubmit="enviarWhatsApp(event)" style="display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        
+        <div>
+            <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">Tu Nombre y Apellido:</label>
+            <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+
+        <div>
+            <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">Selecciona la Marca de tu Equipo:</label>
+            <input type="text" id="marca" placeholder="Ej: Drean, Samsung, LG, Peabody..." style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+
+        <div>
+            <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">¿Qué problema presenta el equipo?</label>
+            <select id="falla" style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: white; box-sizing: border-box;">
+                <option value="No enciende / No arranca">No enciende / No arranca</option>
+                <option value="No enfría / No calienta">No enfría / No calienta</option>
+                <option value="Hace mucho ruido / Vibra">Hace mucho ruido / Vibra</option>
+                <option value="Pierde agua / Fugas">Pierde agua / Fugas</option>
+                <option value="Otro problema / Mantenimiento">Otro problema / Mantenimiento</option>
+            </select>
+        </div>
+
+        <div>
+            <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">Detalles adicionales del problema (Opcional):</label>
+            <textarea id="detalles" rows="3" placeholder="Ej: Empezó a tirar agua desde ayer a la tarde y hace un pitido constante..." style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; resize: vertical; box-sizing: border-box;"></textarea>
+        </div>
+
+        <div>
+            <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">¿De qué zona / localidad sos?</label>
+            <input type="text" id="zona" placeholder="Ej: Centro, Playa Grande, Constitución, Mar del Plata" required style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+
+        <div>
+            <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">Rango Horario de preferencia para la visita:</label>
+            <select id="horario" style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: white; box-sizing: border-box;">
+                <option value="Mañana (8 a 13hs)">Mañana (8 a 13hs)</option>
+                <option value="Tarde (13 a 18hs)">Tarde (13 a 18hs)</option>
+                <option value="Indiferente / Lo antes posible">Indiferente / Lo antes posible</option>
+            </select>
+        </div>
+
+        <button type="submit" style="background: #25D366; color: white; border: none; padding: 15px; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); transition: transform 0.2s ease;">
+            💬 Enviar Consulta por WhatsApp
+        </button>
+    </form>
+</section>
+
+<script>
+function enviarWhatsApp(event) {
+    event.preventDefault();
+    
+    let nombre = document.getElementById('nombre').value;
+    let marca = document.getElementById('marca').value;
+    let falla = document.getElementById('falla').value;
+    let detalles = document.getElementById('detalles').value;
+    let zona = document.getElementById('zona').value;
+    let horario = document.getElementById('horario').value;
+
+    let mensaje = `Hola! Vengo de la página web y quiero solicitar un presupuesto:\n\n` +
+                  `*Nombre:* ${nombre}\n` +
+                  `*Marca:* ${marca}\n` +
+                  `*Falla:* ${falla}\n` +
+                  `*Detalles:* ${detalles}\n` +
+                  `*Zona:* ${zona}\n` +
+                  `*Horario:* ${horario}`;
+
+    let numeroWhatsApp = "5492236743622";
+    let url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+    
+    window.open(url, '_blank');
+}
+</script>
+
 
       </div>
     </section>
