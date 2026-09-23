@@ -254,16 +254,24 @@
             border: 2px solid #0f2b48;
         }
 
+        /* Definición de la animación constante (efecto flotar) */
+        @keyframes flotarIcono {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-8px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
         .service-icon {
             font-size: 3rem;
             margin-bottom: 15px;
             display: inline-block;
-            transition: transform 0.3s ease; /* Transición suave para el movimiento */
-        }
-
-        /* Efecto al pasar el mouse por la tarjeta: gira y agranda el icono */
-        .service-card:hover .service-icon {
-            transform: rotate(12deg) scale(1.15);
+            animation: flotarIcono 3.5s ease-in-out infinite; /* Movimiento constante automático */
         }
 
         .service-card h3 {
