@@ -223,6 +223,15 @@
             justify-content: center;
         }
 
+        /* Animación continua en bucle (tipo GIF) al pasar el cursor */
+        @keyframes gifBounce {
+            0% { transform: translateY(0) rotate(0deg) scale(1.15); }
+            25% { transform: translateY(-6px) rotate(-5deg) scale(1.15); }
+            50% { transform: translateY(0) rotate(0deg) scale(1.15); }
+            75% { transform: translateY(-6px) rotate(5deg) scale(1.15); }
+            100% { transform: translateY(0) rotate(0deg) scale(1.15); }
+        }
+
         .service-card {
             background: white;
             border-radius: 16px;
@@ -244,7 +253,7 @@
         }
 
         .service-card:hover .service-icon {
-            transform: scale(1.2) rotate(5deg);
+            animation: gifBounce 1s infinite ease-in-out;
         }
 
         .service-card.card-industrial {
@@ -572,262 +581,4 @@
       </div>
     </section>
 
-    <section id="presupuesto-inmediato" style="padding: 50px 20px; background: #f8fafc; border-radius: 20px; margin: 40px auto; max-width: 900px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="font-family: 'Montserrat', sans-serif; color: #1a5276; font-size: 1.8rem; margin-bottom: 10px;">Solicitud de Presupuesto Inmediato</h2>
-            <p style="color: #555; font-size: 1rem;">Completá los datos y envianos tu consulta directamente a nuestro WhatsApp técnico</p>
-        </div>
-
-        <form id="whatsappForm" onsubmit="enviarWhatsApp(event)" style="display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-            
-            <div>
-                <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">Tu Nombre y Apellido:</label>
-                <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
-            </div>
-
-            <div>
-                <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">Selecciona la Marca de tu Equipo:</label>
-                <input type="text" id="marca" placeholder="Ej: Drean, Samsung, LG, Peabody..." style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
-            </div>
-
-            <div>
-                <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">¿Qué problema presenta el equipo?</label>
-                <select id="falla" style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: white; box-sizing: border-box;">
-                    <option value="No enciende / No arranca">No enciende / No arranca</option>
-                    <option value="No enfría / No calienta">No enfría / No calienta</option>
-                    <option value="Hace mucho ruido / Vibra">Hace mucho ruido / Vibra</option>
-                    <option value="Pierde agua / Fugas">Pierde agua / Fugas</option>
-                    <option value="Otro problema / Mantenimiento">Otro problema / Mantenimiento</option>
-                </select>
-            </div>
-
-            <div>
-                <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">Detalles adicionales del problema (Opcional):</label>
-                <textarea id="detalles" rows="3" placeholder="Ej: Empezó a tirar agua desde ayer a la tarde y hace un pitido constante..." style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; resize: vertical; box-sizing: border-box;"></textarea>
-            </div>
-
-            <div>
-                <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">¿De qué zona / localidad sos?</label>
-                <input type="text" id="zona" placeholder="Ej: Centro, Playa Grande, Constitución, Mar del Plata" required style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
-            </div>
-
-            <div>
-                <label style="display: block; font-weight: 600; color: #1a5276; margin-bottom: 8px; font-size: 0.95rem;">Rango Horario de preferencia para la visita:</label>
-                <select id="horario" style="width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: white; box-sizing: border-box;">
-                    <option value="Mañana (8 a 13hs)">Mañana (8 a 13hs)</option>
-                    <option value="Tarde (13 a 18hs)">Tarde (13 a 18hs)</option>
-                    <option value="Indiferente / Lo antes posible">Indiferente / Lo antes posible</option>
-                </select>
-            </div>
-
-            <button type="submit" style="background: #25D366; color: white; border: none; padding: 15px; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); transition: transform 0.2s ease;">
-                💬 Enviar Consulta por WhatsApp
-            </button>
-        </form>
-    </section>
-
-    <script>
-    function enviarWhatsApp(event) {
-        event.preventDefault();
-        
-        let nombre = document.getElementById('nombre').value;
-        let marca = document.getElementById('marca').value;
-        let falla = document.getElementById('falla').value;
-        let detalles = document.getElementById('detalles').value;
-        let zona = document.getElementById('zona').value;
-        let horario = document.getElementById('horario').value;
-
-        let mensaje = `Hola! Vengo de la página web y quiero solicitar un presupuesto:\n\n` +
-                      `*Nombre:* ${nombre}\n` +
-                      `*Marca:* ${marca}\n` +
-                      `*Falla:* ${falla}\n` +
-                      `*Detalles:* ${detalles}\n` +
-                      `*Zona:* ${zona}\n` +
-                      `*Horario:* ${horario}`;
-
-        let numeroWhatsApp = "5492236743622";
-        let url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-        
-        window.open(url, '_blank');
-    }
-    </script>
-
-    <section id="como-funciona" style="padding: 50px 20px; max-width: 1100px; margin: 0 auto;">
-      <h2 class="section-title">¿Cómo Funciona Nuestro Servicio?</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
-        
-        <div style="text-align: center;">
-          <div style="font-size: 3rem; margin-bottom: 15px;">📱</div>
-          <h3 style="color: #1a5276; margin-bottom: 10px; font-size: 1.1rem;">Pedí tu visita técnica</h3>
-          <p style="color: #666; font-size: 0.95rem;">Escribís por WhatsApp, contás qué equipo tenés y qué le pasa.</p>
-        </div>
-
-        <div style="text-align: center;">
-          <div style="font-size: 3rem; margin-bottom: 15px;">🔧</div>
-          <h3 style="color: #1a5276; margin-bottom: 10px; font-size: 1.1rem;">El técnico se acerca</h3>
-          <p style="color: #666; font-size: 0.95rem;">Coordina día y horario. Se presenta en tu domicilio.</p>
-        </div>
-
-        <div style="text-align: center;">
-          <div style="font-size: 3rem; margin-bottom: 15px;">✅</div>
-          <h3 style="color: #1a5276; margin-bottom: 10px; font-size: 1.1rem;">Presupuesto antes de reparar</h3>
-          <p style="color: #666; font-size: 0.95rem;">El técnico diagnostica en tu casa y te pasa el presupuesto antes de arrancar.</p>
-        </div>
-          
-      </div>
-    </section>
-
-    <section style="background: #ffffff; padding: 35px 20px; border-radius: 16px; margin: 30px auto; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: center;">
-      <h2 style="font-size: 1.6rem; color: #1a5276; margin-bottom: 15px;">¿Por qué elegirnos?</h2>
-      <div style="width: 50px; height: 3px; background: #007bff; margin: 0 auto 20px auto;"></div>
-      
-      <p style="color: #666; font-size: 0.95rem; max-width: 700px; margin: 0 auto 30px auto; line-height: 1.6;">
-        Somos un servicio técnico especializado con años de experiencia en Mar del Plata. Realizamos diagnósticos precisos, utilizamos repuestos de calidad y ofrecemos garantía en todos nuestros trabajos. Tu satisfacción es nuestra prioridad.
-      </p>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; max-width: 750px; margin: 0 auto;">
-        
-        <a href="diagnostico-preciso.html" style="text-decoration: none; color: inherit; background: #f8f9fa; padding: 15px 10px; border-radius: 12px; border: 1px solid #e9ecef; display: flex; flex-direction: column; align-items: center;">
-          <span style="font-size: 2rem; margin-bottom: 8px;">✅</span>
-          <strong style="font-size: 0.9rem; color: #333;">Diagnóstico Preciso</strong>
-          <span style="color: #007bff; font-weight: bold; display: block; margin-top: 8px; font-size: 0.8em;">→</span>
-        </a>
-
-        <a href="repuestos-de-calidad.html" style="text-decoration: none; color: inherit; background: #f8f9fa; padding: 15px 10px; border-radius: 12px; border: 1px solid #e9ecef; display: flex; flex-direction: column; align-items: center;">
-          <span style="font-size: 2rem; margin-bottom: 8px;">🔩</span>
-          <strong style="font-size: 0.9rem; color: #333;">Repuestos de Calidad</strong>
-          <span style="color: #007bff; font-weight: bold; display: block; margin-top: 8px; font-size: 0.8em;">→</span>
-        </a>
-
-        <a href="garantia-asegurada.html" style="text-decoration: none; color: inherit; background: #f8f9fa; padding: 15px 10px; border-radius: 12px; border: 1px solid #e9ecef; display: flex; flex-direction: column; align-items: center;">
-          <span style="font-size: 2rem; margin-bottom: 8px;">🛡️</span>
-          <strong style="font-size: 0.9rem; color: #333;">Garantía Asegurada</strong>
-          <span style="color: #007bff; font-weight: bold; display: block; margin-top: 8px; font-size: 0.8em;">→</span>
-        </a>
-
-        <a href="atencion-rapida.html" style="text-decoration: none; color: inherit; background: #f8f9fa; padding: 15px 10px; border-radius: 12px; border: 1px solid #e9ecef; display: flex; flex-direction: column; align-items: center;">
-          <span style="font-size: 2rem; margin-bottom: 8px;">⚡</span>
-          <strong style="font-size: 0.9rem; color: #333;">Atención Rápida</strong>
-          <span style="color: #007bff; font-weight: bold; display: block; margin-top: 8px; font-size: 0.8em;">→</span>
-        </a>
-
-      </div>
-    </section>
-
-    <section id="opiniones-home" style="padding: 20px 0; max-width: 1000px; margin: 0 auto; text-align: center;">
-        <div style="background: #ffffff; border-radius: 16px; padding: 25px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #eee;">
-            <h2 style="font-size: 1.4rem; color: #1a5276; margin-bottom: 5px;">Lo que dicen nuestros clientes</h2>
-            <p style="color: #f1c40f; font-size: 1.1rem; margin-bottom: 20px;">⭐⭐⭐⭐⭐ <span style="color: #666; font-size: 0.9rem;">(5.0 en Google Maps)</span></p>
-
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-
-                <div style="background: #fdfdfd; border-radius: 12px; padding: 15px; width: 100%; max-width: 280px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); text-align: left; border: 1px solid #eaeaea;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                        <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #5f7d8e; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem;">J</div>
-                        <div>
-                            <strong style="display: block; color: #333; font-size: 0.9rem;">Juani Ojeda</strong>
-                            <span style="font-size: 0.75rem; color: #888;">Hace un mes</span>
-                        </div>
-                    </div>
-                    <div style="color: #f1c40f; font-size: 0.85rem; margin-bottom: 6px;">⭐⭐⭐⭐⭐</div>
-                    <p style="color: #555; font-size: 0.85rem; line-height: 1.4; margin: 0;">"Estamos muy conformes con su trabajo. Cumplió en tiempo y forma su trabajo"</p>
-                </div>
-
-                <div style="background: #fdfdfd; border-radius: 12px; padding: 15px; width: 100%; max-width: 280px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); text-align: left; border: 1px solid #eaeaea;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                        <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #8e44ad; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem;">F</div>
-                        <div>
-                            <strong style="display: block; color: #333; font-size: 0.9rem;">Fernando Gonzalez</strong>
-                            <span style="font-size: 0.75rem; color: #888;">Hace 2 meses</span>
-                        </div>
-                    </div>
-                    <div style="color: #f1c40f; font-size: 0.85rem; margin-bottom: 6px;">⭐⭐⭐⭐⭐</div>
-                    <p style="color: #555; font-size: 0.85rem; line-height: 1.4; margin: 0;">"Excelente trabajo, quedaron de diez las estufas!! Muy recomendable! Gracias!"</p>
-                </div>
-
-                <div style="background: #fdfdfd; border-radius: 12px; padding: 15px; width: 100%; max-width: 280px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); text-align: left; border: 1px solid #eaeaea;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                        <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #d35400; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem;">M</div>
-                        <div>
-                            <strong style="display: block; color: #333; font-size: 0.9rem;">Matias Sasido</strong>
-                            <span style="font-size: 0.75rem; color: #888;">Hace 3 meses</span>
-                        </div>
-                    </div>
-                    <div style="color: #f1c40f; font-size: 0.85rem; margin-bottom: 6px;">⭐⭐⭐⭐⭐</div>
-                    <p style="color: #555; font-size: 0.85rem; line-height: 1.4; margin: 0;">"Excelente atención, confiabilidad y rapidez. 100 x 100 recomendable."</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="seccion-faq" style="padding-top: 20px; padding-bottom: 30px;">
-        <div style="text-align: center;">
-            <a href="preguntas-frecuentes.html" style="text-decoration: none;">
-                <div style="background: white; border-radius: 16px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px solid #2980b9; display: inline-block; width: 100%; max-width: 800px; transition: transform 0.3s ease;">
-                    <span style="font-size: 2.5rem; display: block; margin-bottom: 10px;">❓</span>
-                    <h3 style="color: #1a5276; font-size: 1.4rem; margin-bottom: 5px;">Preguntas Frecuentes</h3>
-                    <p style="color: #666; font-size: 0.95rem;">¿Tenés dudas sobre las zonas de cobertura, medios de pago o garantías? Tocá acá para ver las respuestas.</p>
-                    <span style="color: #007bff; font-weight: bold; display: block; margin-top: 12px;">Ver todas las preguntas frecuentes →</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <section id="cobertura" style="padding: 20px 20px 40px 20px; max-width: 1100px; margin: 0 auto; text-align: center;">
-      <h2 class="section-title">Zona de Cobertura en Mar del Plata</h2>
-      <p class="section-description">Atendemos a domicilio en todos los barrios de la ciudad y zonas aledañas.</p>
-      
-      <div class="mapa-container" style="margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-        <iframe 
-          width="100%" 
-          height="350" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100346.6713917457!2d-57.6322883!3d-38.0022839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x189569fdeef7a6f1%3A0xec8b049615fc0a5!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1650000000000!5m2!1ses!2sar">
-        </iframe>
-      </div>
-    </section>
-
-    <section id="contacto">
-        <div class="contact-section">
-            <h2>¿Necesitás una reparación?</h2>
-            <p>Escribinos por WhatsApp, email o seguinos en Instagram para ver nuestros trabajos.</p>
-
-            <div class="contact-info">
-                <div class="contact-info-item">
-                    📱 <a href="https://wa.me/5492236743622" target="_blank">+54 9 223 674-3622</a>
-                </div>
-                <div class="contact-info-item">
-                    ✉️ <a href="mailto:Reparacionesgonzamdq@reparacionesgonzamdq.com">Reparacionesgonzamdq@reparacionesgonzamdq.com</a>
-                </div>
-                <div class="contact-info-item">
-                    📷 <a href="https://www.instagram.com/reparacionesmardelplata?igsi=MTJhOTMzeXpocGUxeg==" target="_blank">@reparacionesmardelplata</a>
-                </div>
-            </div>
-
-            <div class="contact-buttons">
-                <a href="https://wa.me/5492236743622?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20consultar" class="btn btn-whatsapp" target="_blank">
-                    💬 Escribir por WhatsApp
-                </a>
-                <a href="https://www.instagram.com/reparacionesmardelplata?igsi=MTJhOTMzeXpocGUxeg==" class="btn btn-instagram" target="_blank">
-                    📷 @reparacionesmardelplata
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 Reparaciones Mar del Plata - Mar del Plata, Argentina</p>
-        <p style="margin-top: 8px;">
-            <a href="https://www.instagram.com/reparacionesmardelplata?igsi=MTJhOTMzeXpocGUxeg==" target="_blank">Instagram</a> |
-            <a href="https://wa.me/5492236743622" target="_blank">WhatsApp</a> | 
-            <a href="mailto:Reparacionesgonzamdq@reparacionesgonzamdq.com">Email</a>
-        </p>
-        <p style="margin-top:10px; font-size:0.8rem;">Técnico Electromecánico | Diagnóstico Preciso | Garantía en todos los trabajos</p>
-    </footer>
-
-</body>
-</html>
+    <section id="presupuesto-inmediato" style="padding: 50px 20px; background: #f8fafc; border-radius: 20
