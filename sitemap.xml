@@ -4,7 +4,7 @@
   <!-- Página principal -->
   <url>
     <loc>https://reparacionesgonzamdq.com/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -90,6 +90,21 @@
   <url>
     <loc>https://reparacionesgonzamdq.com/aire-acondicionado-automovil.html</loc>
     <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Nuevos Servicios Agregados -->
+  <url>
+    <loc>https://reparacionesgonzamdq.com/electricidad.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://reparacionesgonzamdq.com/gasista.html</loc>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
