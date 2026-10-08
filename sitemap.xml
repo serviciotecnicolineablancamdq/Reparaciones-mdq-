@@ -4,7 +4,7 @@
   <!-- Página principal -->
   <url>
     <loc>https://reparacionesgonzamdq.com/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -130,10 +130,38 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Área Industrial -->
+  <url>
+    <loc>https://reparacionesgonzamdq.com/zingueria.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://reparacionesgonzamdq.com/durlock.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://reparacionesgonzamdq.com/herreria.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Área Industrial y Comercial -->
   <url>
     <loc>https://reparacionesgonzamdq.com/soluciones-industriales.html</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://reparacionesgonzamdq.com/mantenimiento-edificios-hoteles.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
